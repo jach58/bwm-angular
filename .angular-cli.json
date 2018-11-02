@@ -16,7 +16,7 @@
     "test": "test.ts",
     "tsconfig": "tsconfig.app.json",
     "testTsconfig": "tsconfig.spec.json",
-    "prefix": "app",
+    "prefix": "bwm",
     "styles": [
       "styles.scss",
       "../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -58,6 +58,9 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {},
+    "spec": {
+      "component": false
+    }
   }
 }
