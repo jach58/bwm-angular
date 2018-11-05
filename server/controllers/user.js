@@ -30,7 +30,7 @@ exports.auth = function(req, res) {
           username: user.username
         },
         config.SECRET,
-        { expiresIn: '1h' }
+        { expiresIn: '10h' }
       );
       return res.json(token);
     } else {

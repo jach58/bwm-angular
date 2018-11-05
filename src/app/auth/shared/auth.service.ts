@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import * as jwt from 'jsonwebtoken';
 import * as moment from 'moment';
-import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/map';
 
 class DecodedToken {
   exp = 0;
@@ -35,11 +35,9 @@ export class AuthService {
   }
 
   public login(userData: any): Observable<any> {
-    return this.http.post('/api/v1/users/auth', userData).pipe(
-      map((token: any) => {
-        return this.saveToken(token);
-      })
-    );
+    return this.http.post('/api/v1/users/auth', userData).map((token: any) => {
+      return this.saveToken(token);
+    });
   }
 
   public logout() {
