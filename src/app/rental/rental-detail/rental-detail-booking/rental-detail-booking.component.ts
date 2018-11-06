@@ -14,6 +14,7 @@ import { HelperService } from '../../../common/service/helper.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DaterangePickerComponent } from 'ng2-daterangepicker';
 import * as moment from 'moment';
+import { AuthService } from '../../../auth/shared/auth.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -44,7 +45,8 @@ export class RentalDetailBookingComponent implements OnInit {
     private modalService: NgbModal,
     private bookingService: BookingService,
     private toastr: ToastsManager,
-    private vcr: ViewContainerRef
+    private vcr: ViewContainerRef,
+    private auth: AuthService
   ) {
     this.toastr.setRootViewContainerRef(vcr);
   }
@@ -52,6 +54,10 @@ export class RentalDetailBookingComponent implements OnInit {
   ngOnInit() {
     this.newBooking = new Booking();
     this.getBookedOutDates();
+  }
+
+  private isAuthenticated() {
+    return this.auth.isAuthenticated();
   }
 
   private checkForInvalidDates(date) {

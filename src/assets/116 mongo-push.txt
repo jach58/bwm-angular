@@ -1,2 +1,0 @@
-﻿##### Mongo $push #####
-https://docs.mongodb.com/manual/reference/operator/update/push/
