@@ -21,6 +21,21 @@
 .booking {
   padding: 20px;
   border: 1px solid $light-gray-color;
+  text-align: center;
+
+  .should-login {
+    margin-bottom: 10px;
+
+    .btn-bwm {
+      font-size: 14px;
+      padding: 15px;
+
+      &:focus,
+      &:hover {
+        color: white;
+      }
+    }
+  }
 
   .btn-confirm {
     background-color: #FF5A5F;
